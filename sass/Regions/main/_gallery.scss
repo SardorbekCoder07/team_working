@@ -2,13 +2,15 @@
 @use '../../mixins';
 
 .gallery {
+    @media only screen and (max-width: 1024px) {
+        display: none;
+    }
     position: relative;
     top: 90px;
     text-align: center;
 }
 
 h2{
-    // margin-top: 60px;
     font-family: $Roboto;
     font-size: $fs-36;
     color: $bg-skyblue;

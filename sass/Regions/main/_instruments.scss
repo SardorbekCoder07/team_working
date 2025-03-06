@@ -33,6 +33,9 @@
                     width: 380px;
                     font-size: $fs-18;
                 }
+                @media only screen and (max-width: 1024px) {
+                    font-size: $fs-18;
+                }
             }
 
             span {
@@ -116,7 +119,13 @@
             @media only screen and (max-width: 1024px) {
                 width: 400px;
             }
+            @media only screen and (max-width: 425px) {
+                width: 380px;
+            }
         }
     }
+    @media only screen and (max-width: 425px) {
+        @include mixins.flexBox(space-between, center, column, '', 1rem);
 
+    }
 }

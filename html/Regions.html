@@ -160,6 +160,17 @@
             </div>
         </section>
     </main>
+    <main class="videoSlider container">
+        <ul class="videos"></ul>
+        <div class="sliderControl">
+            <p class="calcSliders"><span></span> из <span></span></p>
+            <div class="controlButtons">
+                <button class="backButton">Назад</button>
+                <button class="nextButton active">Далее</button>
+            </div>
+        </div>
+        <button class="pageNation">Cмотреть все</button>
+    </main>
     <!-- Win -->
     <div class="win container">
         <div class="win__card">
@@ -196,6 +207,7 @@
 
         </div>
     </div>
+
     <!-- SKILLS -->
     <main class="skills container">
         <h3>Почему стоит приехать в Москву <span>на полное восстановление зубов?</span></h3>
@@ -625,6 +637,7 @@
             <img src="./../assets/img/katta duxtir.png" alt="this is katta duxtir">
         </div>
     </main>
+
     <!-- Grid -->
     <main class="gallery container">
         <h2>ПРЕМИАЛЬНЫЙ УРОВЕНЬ КОМФОРТА <span>НА 350 м²</span></h2>
@@ -638,6 +651,41 @@
         </div>
 
     </main>
+
+    <main class="nurse container">
+        <h1>Вы окутаны заботой</h1>
+        <p id="p">
+            Куратор лечения - это специалист, который будет сопровождать вас на протяжении всего лечения, оказывая поддержку и руководство.
+        </p>
+        <div class="nur">
+            <div class="nur__img">
+                <img src="./../assets/img/nurse.png" alt="this is quistasions img">
+            </div>
+            <div class="nur__txt">
+                <h2>
+                    Седовласова Юлия
+                </h2>
+                <p>
+                    Стаж: <span>6 лет</span>
+                </p>
+                <ul>
+                    <li>По-человечески поддержит вас</li>
+                    <li>Объяснит то, что не понятно после приема — переведет с медицинского языка на человеческий.</li>
+                    <li>Поможет разобраться с планом лечения</li>
+                    <li>Подберет все возможные и невозможные способы оплат</li>
+                    <li>Постоянно на связи</li>
+                </ul>
+                <button class="nurse-btn">
+                    Задать вопрос WhatsApp
+                </button>
+            </div>
+
+        </div>
+        <div class="cnt-btn">
+            <button class="back">Назад</button>
+            <button class="next active">Далее</button>
+          </div>
+    </main>
     <!-- Team  -->
     <main class="team container">
         <div class="team__txt">
@@ -646,19 +694,24 @@
                     — это <span>поворотный момент <br>
                         к полноценной жизни.</span></h1>
             </div>
-            <div class="poragraph">
-                <p>Cобрали лучших специалистов в каждом из трёх этапов протокола all-on-4</p>
-                <p>Опробовали и усовершенствовали передовые методики восстановления зубов за 1 день</p>
-                <p>Создали условия, в которых реабилитация каждого пациента проходит в 100% соблюдении стандартов
-                    тотальной безопасности, безболезненности и комфорта</p>
-            </div>
+            <ul>
+                <li>
+                    Cобрали лучших специалистов в каждом из трёх этапов протокола all-on-4
+                </li>
+                <li>
+                    Опробовали и усовершенствовали передовые методики восстановления зубов за 1 день
+                </li>
+                <li>
+                    Создали условия, в которых реабилитация каждого пациента проходит в 100% соблюдении стандартов тотальной безопасности, безболезненности и комфорта
+                </li>
+            </ul>
         </div>
         <div class="team__image">
         </div>
     </main>
     <main class="question container">
         <div class="savol">
-            <div class="imige">
+            <div class="savol__img">
                 <img src="./../assets/img/Аватар.png" alt="this is quistasions img">
             </div>
             <div class="savol__txt">
@@ -678,10 +731,292 @@
             </div>
         </div>
     </main>
-    <!-- FOOTER -->
-    <footer>
 
-    </footer>
+
+    <!-- FOOTER -->
+<footer>
+</footer>
+    <!-- slider -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".slider_top .slide");
+            const nextButton = document.querySelector(".slider_buttons button");
+            const counterText = document.querySelector(".slider_buttons p");
+            let currentIndex = 0;
+            const visibleSlides = 3;
+            const totalSlides = slides.length;
+            function updateSlider() {
+                slides.forEach((slide, index) => {
+                    slide.style.display =
+                        index >= currentIndex && index < currentIndex + visibleSlides
+                            ? "flex"
+                            : "none";
+                });
+                counterText.textContent = `${currentIndex + 1}-${Math.min(
+                    currentIndex + visibleSlides,
+                    totalSlides
+                )} из ${totalSlides}`;
+            }
+            updateSlider();
+            nextButton.addEventListener("click", function () {
+                currentIndex += 1;
+                if (currentIndex + visibleSlides > totalSlides) {
+                    currentIndex = 0;
+                }
+                updateSlider();
+            });
+        });
+
+        const slider = document.querySelector(".videos"),
+            pauseIconUrl = "../../assets/svg/pauseIcon.svg",
+            playIconUrl = "../../assets/svg/playIcon.svg";
+        let videos;
+
+        let videosArr = [
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image1.png",
+                text: "Борис, 52 года",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image2.png",
+                text: "Нина, 60 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image3.png",
+                text: "Анатолий, 65 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image1.png",
+                text: "Борис, 52 года",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image2.png",
+                text: "Нина, 60 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image3.png",
+                text: "Анатолий, 65 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image1.png",
+                text: "Борис, 52 года",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image2.png",
+                text: "Нина, 60 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image3.png",
+                text: "Анатолий, 65 лет",
+            },
+            {
+                src: "../../assets/video/video.mp4",
+                poster: "../assets/img/video-image1.png",
+                text: "Борис, 52 года",
+            },
+        ]; // video malumotlari
+
+        function setVideo(src, poster, text) {
+            return ` <li class="video pause">
+                    <video
+                      src=${src}
+                      poster=${poster}
+                    ></video>
+                    <div class="player">
+                      <div class="info">
+                        <div class="play">
+                          <img src="../../assets/svg/playIcon.svg" alt="player" />
+                        </div>
+                        <p>${text}</p>
+                      </div>
+                    </div>
+                  </li>`;
+        } // video HTML strukturasi
+
+        function numberOfVideo() {
+            if (window.innerWidth <= 440) {
+                slider.innerHTML = videosArr
+                    .slice(0, 4)
+                    .map((e) => {
+                        return setVideo(e.src, e.poster, e.text);
+                    })
+                    .join("");
+            } else {
+                slider.innerHTML = videosArr
+                    .map((e) => {
+                        return setVideo(e.src, e.poster, e.text);
+                    })
+                    .join("");
+            }
+            // videolar quyilganda vidolarni olib playerlargaham eventlari quyiladi
+            videos = document.querySelectorAll(".video");
+            playerButtons();
+        } // mediasida videolar soni har xil bulgani uchun
+
+        numberOfVideo(); // videolarni chiqarish uchun
+
+        window.addEventListener("resize", numberOfVideo); //ekran uzgarsa videolar sonini nazorat qilish uchun
+
+        function playerButtons() {
+            videos.forEach((e, i, a) => {
+                e.querySelector(".play").addEventListener("click", () => {
+                    let video = e.querySelector("video");
+                    e.classList.toggle("pause");
+                    if (video.paused) {
+                        a.forEach((element) => {
+                            element.querySelector("video").pause();
+                            element.querySelector("img").src = playIconUrl;
+                        });
+                        video.play();
+                        e.querySelector("img").src = pauseIconUrl;
+                    } else {
+                        video.pause();
+                        e.querySelector("img").src = playIconUrl;
+                    }
+                });
+            });
+        } //video player tugmasiniki
+
+        //perv and next buttons slider
+        const backButton = document.querySelector(".backButton"),
+            nextButton = document.querySelector(".nextButton"),
+            calcSliders = document.querySelector(".calcSliders");
+        let sliderIndex = 1,
+            slidersOfNum = videos.length;
+
+        calcSliders.lastChild.innerText = slidersOfNum;
+        calcSliders.firstChild.innerText = sliderIndex;
+
+        nextButton.addEventListener("click", onClickNext); // birinchi next tugma ishlagani uchun
+
+        function onClickNext(e) {
+            if (sliderIndex === 1) {
+                backButton.addEventListener("click", onClickBack);
+                backButton.classList.add("active");
+            }
+            if (sliderIndex <= slidersOfNum) {
+                sliderIndex += 1;
+                calcSliders.firstChild.innerText = sliderIndex;
+                if (sliderIndex === slidersOfNum) {
+                    e.target.removeEventListener("click", onClickNext);
+                    e.target.classList.remove("active");
+                }
+            }
+            slider.scrollLeft = videos[sliderIndex - 1].offsetLeft;
+        } // next tugmasini funksiyasi
+
+        function onClickBack(e) {
+            if (sliderIndex === slidersOfNum) {
+                nextButton.addEventListener("click", onClickNext);
+                nextButton.classList.add("active");
+            }
+            if (sliderIndex > 0) {
+                sliderIndex -= 1;
+                calcSliders.firstChild.innerText = sliderIndex;
+                if (sliderIndex === 1) {
+                    e.target.removeEventListener("click", onClickBack);
+                    e.target.classList.remove("active");
+                }
+            }
+            slider.scrollLeft = videos[sliderIndex - 1].offsetLeft;
+        } // back tugmasini funksiyasi
+
+        // see all button
+        const seeAllButton = document.querySelector(".pageNation");
+
+        seeAllButton.addEventListener("click", (e) => {
+            e.target.style.display = "none";
+            slider.innerHTML = videosArr
+                .map((e) => {
+                    return setVideo(e.src, e.poster, e.text);
+                })
+                .join("");
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".active_buttons button");
+            const sections = document.querySelectorAll(".department");
+            const slides = [
+                {
+                    title: "Предварительное планирование",
+                    text1:
+                        "Основываясь на клиническом случае пациента, врач определяет предварительно-оптимальное расположение имплантатов в челюсти, используя компьютерную томографию и программу для планирования имплантации.",
+                    text2:
+                        "Учитывая высоту <a href='#'>альвеолярного гребня</a> и <a href='#'>плотность костной ткани</a>, врач принимает решение о количестве имплантатов: 4, 6 или 8 для надёжности будущей конструкции.",
+                    img: "../assets/svg/true_icon.svg",
+                },
+                {
+                    title: "Хирургическое вмешательство",
+                    text1:
+                        "Во время операции врач выполняет установку имплантатов в заранее спланированные позиции, учитывая анатомические особенности пациента.",
+                    text2:
+                        "Процесс проводится с минимальным вмешательством и высокой точностью благодаря цифровому моделированию.",
+                    img: "../assets/svg/true_icon.svg",
+                },
+                {
+                    title: "Завершающий этап",
+                    text1:
+                        "После установки имплантатов врач проверяет стабильность и проводит финальные корректировки для лучшей адаптации.",
+                    text2:
+                        "Через несколько месяцев устанавливается постоянная ортопедическая конструкция, обеспечивающая комфорт и естественный вид.",
+                    img: "../assets/svg/true_icon.svg",
+                },
+            ];
+
+            let currentSlide = 0;
+            const titleElement = document.querySelector(".slider_left h4");
+            const text1Element = document.querySelector(".slider_left_p1");
+            const text2Element = document.querySelector(".slider_left_p2");
+            const imgElement = document.querySelector(".department_slider_top img");
+            const slideIndexElement = document.querySelector(".slider_bottom_p");
+
+            function updateSlide() {
+                titleElement.innerHTML = slides[currentSlide].title;
+                text1Element.innerHTML = slides[currentSlide].text1;
+                text2Element.innerHTML = slides[currentSlide].text2;
+                imgElement.src = slides[currentSlide].img;
+                slideIndexElement.innerHTML = `${currentSlide + 1} из ${slides.length
+                    }`;
+            }
+
+            document
+                .querySelector(".back_button")
+                .addEventListener("click", function () {
+                    if (currentSlide > 0) {
+                        currentSlide--;
+                        updateSlide();
+                    }
+                });
+
+            document
+                .querySelector(".next_button")
+                .addEventListener("click", function () {
+                    if (currentSlide < slides.length - 1) {
+                        currentSlide++;
+                        updateSlide();
+                    }
+                });
+
+            updateSlide();
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    buttons.forEach((btn) => (btn.style.backgroundColor = "#F3F4F6"));
+                    this.style.backgroundColor = "#30B5DF";
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

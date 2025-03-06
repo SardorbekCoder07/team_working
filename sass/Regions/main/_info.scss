@@ -1,0 +1,129 @@
+@use "../../roots" as *;
+@use "../../mixins";
+
+.main {
+
+    .section_info {
+        @include mixins.flexBox(center, flex-start, column, '', 2rem);
+
+        .section_info_div {
+            width: 100%;
+            max-width: 621px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+
+            .info_div_top {
+                b {
+                    display: block;
+                    margin-bottom: 24px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 40px;
+                    color: rgba(17, 24, 39, 1);
+                    line-height: 46px;
+                    letter-spacing: 0%;
+
+                    span {
+                        color: rgba(48, 181, 223, 1);
+                    }
+                }
+
+                p {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    font-size: 17px;
+                    color: rgba(17, 24, 39, 1);
+                    line-height: 25.5px;
+                    letter-spacing: 0%;
+                    margin-bottom: 24px;
+                }
+
+                strong {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 600;
+                    font-size: 17px;
+                    color: rgba(17, 24, 39, 1);
+                    line-height: 25.5px;
+                    letter-spacing: 0%;
+                }
+            }
+
+            .info_div_middle {
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: center;
+                column-gap: 26px;
+
+                ul {
+                    width: 100%;
+                    max-width: 310px;
+
+                    li {
+                        list-style-image: url("../../../assets/svg/icon_radius_50.svg");
+                        font-family: "Roboto", sans-serif;
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: rgba(17, 24, 39, 1);
+                        line-height: 26px;
+                        letter-spacing: 0%;
+
+                        span {
+                            font-family: "Roboto", sans-serif;
+                            font-weight: 400;
+                            font-size: 17px;
+                            color: rgba(56, 68, 80, 1);
+                            line-height: 25.5px;
+                            letter-spacing: 0%;
+                        }
+                    }
+                }
+            }
+
+            .info_div_bottom {
+                p {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: rgba(17, 28, 39, 1);
+                    line-height: 32.64px;
+                    letter-spacing: 0%;
+                    margin-bottom: 16px;
+
+                    span {
+                        color: rgba(48, 181, 223, 1);
+                    }
+                }
+
+                span {
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+                    font-size: 17px;
+                    //   leading-trim: Cap height
+                    color: rgba(17, 24, 39, 1);
+                    line-height: 25.5px;
+                    letter-spacing: 0%;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1023px) {
+        .section_info {
+            padding: 50px;
+
+            .section_info_div {
+                .info_div_middle {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .section_info {
+            padding: 20px;
+        }
+    }
+}

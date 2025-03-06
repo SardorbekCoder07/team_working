@@ -82,10 +82,17 @@
                 padding: 40px;
                 @include mixins.flexBox(start, flex-start, column, '', 1rem);
             }
+            @media only screen and (max-width: 1024px) {
+               width: 380px;
+            }
         }
         @media only screen and (max-width: 1024px) {
             margin-top: 40px;
             @include mixins.flexBox(center, start, row, '', 1rem);
+        }
+        @media only screen and (max-width: 425px) {
+            margin-top: 40px;
+            @include mixins.flexBox(center, start, column, '', 1rem);
         }
     }
 }

@@ -64,10 +64,19 @@
                     @media only screen and (max-width: 1024px) {
                         font-size: $fs-16;
                     }
+                    @media only screen and (max-width: 425px) {
+                        width: 330px;
+
+                    }
                 }
 
                 @media only screen and (max-width: 425px) {
                     @include mixins.flexBox(center, center, column, '', 0.7rem);
+                }
+                @media only screen and (max-width: 425px) {
+                    width: 400px;
+                    text-align: center;
+
                 }
             }
 
@@ -100,8 +109,9 @@
                         color: $bg-skyblue;
                     }
                     @media only screen and (max-width: 1024px) {
-                        font-size: $fs-24;
+                        font-size: $fs-20;
                     }
+
                 }
                 h4 {
                     font-size: $fs-20;
@@ -117,10 +127,19 @@
                         font-size: $fs-16;
                     }
                 }
+                @media only screen and (max-width: 425px) {
+                    width: 350px;
+                    text-align: center;
+
+
+                }
             }
 
             @media only screen and (max-width: 1024px) {
                 width: 100%;
+            }
+            @media only screen and (max-width: 425px) {
+                @include mixins.flexBox(start, center, column-reverse, '', 4rem);
             }
         }
     }

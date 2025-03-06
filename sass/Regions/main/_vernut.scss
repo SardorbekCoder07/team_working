@@ -18,6 +18,10 @@
             font-size: $fs-36;
             line-height: 1;
         }
+        @media only screen and (max-width: 425px) {
+        font-size: $fs-30;
+
+        }
     }
 
     &__cnt {
@@ -46,6 +50,16 @@
                     top: 30px;
                     left: 0px;
                     margin-top: 120px;
+
+                }
+                @media only screen and (max-width: 425px) {
+                    width: 310px;
+                    height: 310px;
+                    border-radius: 500px 500px 500px 10px;
+                    transform: rotate(0deg);
+                    top: 30px;
+                    left: 0px;
+                    margin-top: 100px;
 
                 }
             }
@@ -78,7 +92,7 @@
                     width: 250px;
                     padding: 10px;
                     border-radius: 10px;
-                    top: 290px;
+                    top: 400px;
                     left: 50px;
                 }
             }
@@ -122,24 +136,35 @@
 
                 li::marker {
                     color: $bg-skyblue;
+                    @media only screen and (max-width: 1024px) {
+                        
+                    }
                 }
 
                 @media only screen and (max-width: 1024px) {
                     left: 20px;
                     line-height: 1.7;
-
-
                 }
+
             }
 
             @media only screen and (max-width: 1024px) {
                 width: 400px;
             }
+            @media only screen and (max-width: 425px) {
+width: 350px;
+position: relative;
+top: -50px;
+                }
         }
 
         @media only screen and (max-width: 1024px) {
             @include mixins.flexBox(center, center, row, '', 4rem);
 
         }
+        @media only screen and (max-width: 425px) {
+            @include mixins.flexBox(center, center, column, '', 1.5rem);
+
+            }
     }
 }

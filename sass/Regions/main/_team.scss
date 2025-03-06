@@ -17,12 +17,19 @@
                 color: $bg-skyblue;
             }
         }
-        .poragraph {
-            width: 500px;
-            p {
-                font-size: $fs-20;
-                color: $fc-gray;
-                padding: 5px;
+
+        ul {
+            list-style: disc;
+            color: $bg-gray;
+            position: relative;
+            left: 20px;
+            line-height: 1.5;
+            font-size: $fs-18;
+            margin-bottom: 20px;
+
+            li::marker {
+                color: $bg-skyblue;
+                line-height: 1;
             }
         }
     }

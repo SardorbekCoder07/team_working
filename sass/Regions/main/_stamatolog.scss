@@ -19,6 +19,7 @@
             font-size: $fs-52;
             line-height: 1;
 
+
             span {
                 color: $bg-skyblue;
             }
@@ -26,6 +27,12 @@
             @media only screen and (max-width: 1024px) {
                 font-size: $fs-38;
                 margin-bottom: 20px;
+
+            }
+
+            @media only screen and (max-width: 425px) {
+                font-size: $fs-26;
+                text-align: center;
 
             }
         }
@@ -59,6 +66,11 @@
                 line-height: 1.2;
                 width: 350px;
             }
+
+            @media only screen and (max-width: 425px) {
+                font-size: $fs-16;
+
+            }
         }
 
         .email {
@@ -74,16 +86,26 @@
                     padding: 0 20px;
                     text-align: center;
                 }
+
+                @media only screen and (max-width: 425px) {
+                    width: 100%;
+
+                }
             }
 
             .whatsApp {
                 @include mixins.button(12px 15px, 1px solid $bg-skyblue, $br-8, $bg-skyblue, $fc-white, $fs-20, $fw-5, $shadow-skyblue);
 
                 @media only screen and (max-width: 1024px) {
-                @include mixins.button(12px 10px, 1px solid $bg-skyblue, $br-8, $bg-skyblue, $fc-white, $fs-20, $fw-5, $shadow-skyblue);
+                    @include mixins.button(12px 10px, 1px solid $bg-skyblue, $br-8, $bg-skyblue, $fc-white, $fs-20, $fw-5, $shadow-skyblue);
 
                     width: 60%;
                     font-size: $fs-16;
+                }
+
+                @media only screen and (max-width: 425px) {
+                    width: 100%;
+
                 }
             }
 
@@ -131,9 +153,15 @@
                         display: none;
                     }
                 }
+
                 .gift1 {
                     display: none;
                 }
+            }
+
+            @media only screen and (max-width: 425px) {
+                @include mixins.flexBox(flex-start, center, column, '', 0.8rem);
+
             }
         }
 
@@ -141,6 +169,10 @@
             width: 60%;
         }
 
+        @media only screen and (max-width: 425px) {
+            width: 100%;
+
+        }
     }
 
     &__img {
@@ -156,6 +188,12 @@
                 top: 0px;
                 right: 30px;
             }
+
+            @media only screen and (max-width: 425px) {
+                width: 300px;
+                top: 30px;
+                right: 90px;
+            }
         }
 
         @media only screen and (max-width: 1024px) {
@@ -170,5 +208,13 @@
         padding: 30px 30px;
         width: 100%;
 
+    }
+
+    @media only screen and (max-width: 425px) {
+        width: 380px;
+        height: 770px;
+        @include mixins.flexBox(flex-start, center, column-reverse, '', 1.4rem);
+        padding: 20px 20px;
+        margin-top: 50px;
     }
 }

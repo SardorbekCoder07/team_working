@@ -4,7 +4,7 @@
 
 .win {
     @include mixins.flexBox(center, flex-start, row, '', 2rem);
-    margin-top: 90px;
+    margin-top: 140px;
     margin-bottom: 90px;
 
     &__card {
@@ -109,16 +109,17 @@
             width: 400px;
             height: 350px;
 
+
         }
 
         @media only screen and (max-width: 425px) {
             width: 370px;
+
         }
     }
 
     @media only screen and (max-width: 1024px) {
-        @include mixins.flexBox(center, center, row, wrap, 2rem);
-
+        @include mixins.flexBox(start, center, row, wrap, 2rem);
     }
 
 }

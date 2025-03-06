@@ -61,7 +61,7 @@
         @include mixins.flexBox(start, center, row, '', 5rem);
 
         .tel {
-            @include mixins.input(100%, 2.5rem, '', 1px solid transparent, 1rem, grey, white, 0.5rem);
+            @include mixins.input(130%, 2.5rem, '', 1px solid transparent, 1rem, grey, white, 0.5rem);
             margin-top: -0px;
 
             @media only screen and (max-width: 425px) {

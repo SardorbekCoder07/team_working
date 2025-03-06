@@ -1,5 +1,6 @@
 @use '../components/header';
 @use './main/hero';
+@use './main/video';
 @use './main/win';
 @use './main/skills';
 @use './main/timeline';
@@ -12,9 +13,11 @@
 @use './main/garand';
 @use './main/instruments';
 @use './main/doctor';
+@use './main/info';
 @use './main/gallery';
+@use './main/nurse';
 @use './main/team';
 @use './main/questions';
-
-@use '../components/footer';
+@use './main/accardion';
+@use './main/footer';
 

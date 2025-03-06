@@ -1,0 +1,116 @@
+@use '../../roots' as *;
+@use '../../mixins';
+
+.nurse {
+    margin-top: 120px;
+    margin-bottom: 200px;
+    width: 100%;
+    @include mixins.flexBox(center, center, column, '', 2rem);
+h1{
+    font-size: $fs-72;
+    color: $bg-skyblue;
+}
+#p{
+    font-size: $fs-20;
+    width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+    .nur {
+        @include mixins.flexBox(center, center, row-reverse, '', 2rem);
+
+        &__txt {
+            height: 470px;
+            background-color: $bg-light-blue;
+            padding: 60px 60px;
+            border-radius: $br-24;
+
+            h2 {
+                font-size: $fs-36;
+                color: $bg-dark;
+                font-weight: $fw-5;
+
+                @media only screen and (max-width: 1024px) {
+                        font-size: $fs-26;
+                }
+            }
+
+            p {
+                font-size: $fs-18;
+                color: $bg-gray;
+                span{
+                font-weight: $fw-9;
+                    color: $bg-dark;
+                    font-size: $fs-20;
+                }
+                @media only screen and (max-width: 1024px) {
+                    font-size: $fs-16;
+
+                }
+            }
+            ul {
+                list-style: disc;
+                color: $bg-gray;
+                position: relative;
+                left: 20px;
+                line-height: 2;
+                font-size: $fs-18;
+                margin-bottom: 20px;
+
+                li::marker {
+
+                    color: $bg-skyblue;
+                }
+            }
+
+            .nurse-btn {
+                @include mixins.button(15px 20px, 1px solid $bg-skyblue, $br-8, $bg-skyblue, $fc-white, $fs-22, $fw-5, $shadow-skyblue);
+                margin-top: 10px;
+
+                @media only screen and (max-width: 1024px) {
+                    width: 100%;
+                margin-top: 20px;
+
+                }
+            }
+
+            @media only screen and (max-width: 1024px) {
+                padding: 65px 50px;
+            }
+            @media only screen and (max-width: 425px) {
+width: 370px;
+padding: 35px 30px;
+
+            }
+        }
+        @media only screen and (max-width: 1024px) {
+        @include mixins.flexBox(center, center, row, '', 1rem);
+
+        }
+        @media only screen and (max-width: 425px) {
+            @include mixins.flexBox(center, center, column, '', 1rem);
+
+            }
+    }
+    @media only screen and (max-width: 425px) {
+margin-top: 90px;
+        }
+        .cnt-btn{
+            @include mixins.flexBox(center, center, row, '', 1rem);
+
+            .back{
+                @include mixins.button(10px 20px, 1px solid rgba(128, 128, 128, 0.253), $br-8, transparent, $bg-dark, $fs-16, $fw-7, '');
+
+            }
+            .next{
+                @include mixins.button(10px 20px, 1px solid rgba(128, 128, 128, 0.253), $br-8, transparent, $bg-dark, $fs-16, $fw-7, '');
+
+            }
+        }
+        @media only screen and (max-width: 1024px) {
+display: none;
+            }
+            @media only screen and (max-width: 425px) {
+display: none;
+                }
+}

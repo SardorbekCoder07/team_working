@@ -21,6 +21,10 @@
                 font-size: $fs-48;
                 line-height: 1;
             }
+
+            @media only screen and (max-width: 425px) {
+                font-size: $fs-30;
+            }
         }
 
         p {
@@ -30,6 +34,10 @@
             @media only screen and (max-width: 1024px) {
                 font-size: $fs-18;
 
+            }
+
+            @media only screen and (max-width: 425px) {
+                font-size: $fs-16;
             }
         }
 
@@ -48,12 +56,24 @@
             }
 
             @media only screen and (max-width: 1024px) {
-                @include mixins.flexBox(center, flex-start, row, '', 1rem);
-                width: 500px;
+                @include mixins.flexBox(start, flex-start, row, '', 3rem);
+                width: 700px;
+                margin-bottom: 80px;
+            }
+
+            @media only screen and (max-width: 425px) {
+                width: 380px;
+                @include mixins.flexBox(center, flex-start, row, wrap, 1rem);
+                text-align: center;
             }
         }
 
         @media only screen and (max-width: 1024px) {
+            @include mixins.flexBox(start, flex-start, column, '', 2rem);
+        }
+
+        @media only screen and (max-width: 425px) {
+            width: 370px;
             @include mixins.flexBox(start, flex-start, column, '', 2rem);
         }
     }
@@ -66,11 +86,17 @@
                 width: 480px;
 
             }
+
+            @media only screen and (max-width: 1024px) {
+                width: 380px;
+
+            }
         }
     }
 
     @media only screen and (max-width: 1024px) {
-        @include mixins.flexBox(right, center, column-reverse, '', 1rem);
+        @include mixins.flexBox(center, center, column-reverse, '', 1rem);
         margin-top: 100px;
+
     }
 }
